@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Portfolio</title>
+</head>
+<body>
+  <h1>Hello! I’m [你的名字]</h1>
+  <p>I love coding and here are my projects:</p>
+  <ul id="project-list"></ul>
+
+  <script>
+    // 从后端获取项目数据
+    fetch('/api/projects')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('project-list');
+        data.forEach(project => {
+          const item = document.createElement('li');
+          item.textContent = `${project.title} - ${project.description}`;
+          list.appendChild(item);
+        });
+      });
+  </script>
+</body>
+</html>
