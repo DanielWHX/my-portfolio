@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>My Portfolio</title>
 </head>
+
 <body>
-  <h1>Hello! I’m [你的名字]</h1>
-  <p>I love coding and here are my projects:</p>
+  <h1>Hello! I’m HongxiangWang</h1>
+  <p>This is my portfolio self introduction project</p>
   <ul id="project-list"></ul>
 
   <script>
-    // 从后端获取项目数据
-    fetch('/api/projects')
-      .then(response => response.json())
+    // Fetch project data from the server
+    fetch('/api/projects')  //向Node后端请求数据
+      .then(response => response.json()) //将数据转换为JSON格式
       .then(data => {
         const list = document.getElementById('project-list');
         data.forEach(project => {
